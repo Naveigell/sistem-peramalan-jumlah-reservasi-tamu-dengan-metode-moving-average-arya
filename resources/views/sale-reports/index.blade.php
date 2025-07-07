@@ -52,8 +52,15 @@
                                 $no = 0;
                                 $totalMse = 0;
                                 $countMse = 0;
+
+                                $actuals = [];
+                                $forcasts = [];
                             @endphp
                             @foreach ($data as $key => $dt)
+                                @php
+                                    $forcasts[] = array_key_exists($key, $ftMa) ? $ftMa[$key] : 0;
+                                    $actuals[] = $dt;
+                                @endphp
                                 @if (($key > $ft))
                                     @if($yearLabel[$key] == $year)
                                     @php
@@ -78,10 +85,21 @@
                                             $countMse++;
                                         }
                                     @endphp
-                                @endif    
+                                @endif
                             @endforeach
                         </tbody>
                     </table>
+                    @php
+                        $MAE = 0;
+                        $result = 0;
+
+                        foreach ($actuals as $index => $actual) {
+                            $result = $actual - $forcasts[$index];
+                            $MAE += abs($result);
+                        }
+
+                        $MAE = $MAE / 12;
+                    @endphp
                     <br>
                     <div class="col-md-6">
                         <table class="table table-striped table-hover  display nowrap"  style="width:100%" id="baby-table" style="width: 100%">
@@ -89,6 +107,10 @@
                                 <tr>
                                     <th>Jumlah MSE</th>
                                     <th>{{ number_format($totalMse / $countMse, 2) }}</th>
+                                </tr>
+                                <tr>
+                                    <th>Jumlah MAE (Mean Absolute Error)</th>
+                                    <th>{{ number_format($MAE, 2) }}%</th>
                                 </tr>
                             </thead>
                         </table>

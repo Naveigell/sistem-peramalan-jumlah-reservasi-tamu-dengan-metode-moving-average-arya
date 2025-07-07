@@ -73,7 +73,7 @@
             animation: spin 2s linear infinite;
             margin-left:45%;
             margin-top:10%;
-        }   
+        }
         @-webkit-keyframes spin {
             0% { -webkit-transform: rotate(0deg); }
             100% { -webkit-transform: rotate(360deg); }
@@ -123,12 +123,12 @@
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="{{ route('dashboard') }}" style="background: white;">
+                    <a class="navbar-brand" href="{{ route('dashboard') }}" style="background: white; display: flex; align-items: center;">
                         <!-- Logo icon -->
-                        <b class="logo-icon p-l-10">
+                        <b class="logo-icon text-center">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="{{ asset('assets/images/images_kecil.png') }}" alt="homepage" class="light-logo" />
+                            <img src="{{ asset('assets/images/logo.jpeg') }}" alt="homepage" class="light-logo" style="width: 50%; scale: 1;"/>
                         </b>
                         <!--End Logo icon -->
                          <!-- Logo text -->
@@ -142,7 +142,7 @@
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <!-- <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
-                            
+
                         <!-- </b> -->
                         <!--End Logo icon -->
                     </a>
@@ -192,7 +192,7 @@
                                     <li>
                                         <div class="">
                                             <!-- Message -->
-                                            
+
                                         </div>
                                     </li>
                                 </ul>
@@ -238,7 +238,7 @@
         <aside class="left-sidebar" data-sidebarbg="skin5">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
-                @include('layouts.matrix-admin.menu') 
+                @include('layouts.matrix-admin.menu')
             </div>
             <!-- End Sidebar scroll-->
         </aside>
@@ -402,7 +402,7 @@
 
             $('.form-no-enter').on('keyup keypress', function(e) {
                 var keyCode = e.keyCode || e.which;
-                if (keyCode === 13) { 
+                if (keyCode === 13) {
                     e.preventDefault();
                     return false;
                 }
@@ -421,7 +421,7 @@
         })
         $('input[name="dates"]').daterangepicker({
             startDate: moment().subtract(1, 'month'),
-            locale: { 
+            locale: {
                 format: 'DD/MM/YYYY'
             },
             ranges: {

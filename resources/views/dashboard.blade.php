@@ -19,16 +19,16 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <div class="card">
+                <div class="card pt-5">
                     <center>
-                        <img src="{{ asset('assets/images/images.png') }}" style="width: 50%">
+                        <img src="{{ asset('assets/images/logo.jpeg') }}" style="width: 50%">
                     </center>
                     <div class="card-body">
                       <h4 class="card-title">
-                        <center><strong>Selamat Datang </strong><br> Di <br> Hotel Vila Shanti</center>
+                        <center><strong>Selamat Datang </strong><br> Di <br> Hotel Platinum</center>
                       </h4>
                       <p class="card-text">
-                        Alamat : Jl. Danau Tamblingan No.47, Sanur, Denpasar Selatan, Kota Denpasar, Bali 80001
+                        Alamat : Jl. Pemelisan Kedonganan, Kuta, Badung, Bali 80361.
                         <br>
                         Telepon: (0361) 288060
                       </p>
