@@ -1,1 +1,1 @@
-<img src="{{ asset('assets/images/logo.jpeg') }}">
+<img style="{{ @$style }}" class="{{ @$class }}" src="{{ asset('assets/images/logo.jpeg') }}">
